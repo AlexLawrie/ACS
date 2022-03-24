@@ -1,0 +1,201 @@
+{% block title %}<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alex's Clothes Store">
+    <meta name="author" content="Alex Lawrie">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>ACS</title>
+    {% endblock %}
+    {% block stylesheets %}
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  {% endblock %}
+  {% block navbar %}
+  <body>
+
+  <!-- NAVBAR -->
+<header>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">Alex's Clothes Store</h4>
+          <a href="{{ path('shirts') }}"><p class="text-white">Shirts</p></a>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Account</h4>
+          <ul class="list-unstyled">
+            {% if app.user %}
+              <li><a href="{{ path('app_logout') }}" class="text-white">Logout</a>
+              <li><a href="#" class="text-white">Cart</a></li>
+            {% else %}
+              <li><a href="{{ path('app_login') }}" class="text-white">Login</a></li>
+              <li><a href="{{ path('app_register') }}" class="text-white">Register</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="{{ path('index') }}" class="navbar-brand d-flex align-items-center">
+        <img src="https://images.squarespace-cdn.com/content/v1/575a6067b654f9b902f452f4/1552683653140-0UUVQSSUEWVC73AWAEQG/300Logo.png?format=300w" width="10%" alt="ACS Logo">
+        <strong>ACS</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+  {% endblock %}
+{% block carousel %}
+<main>
+
+  <!-- CAROUSEL -->
+  <section class="py-5 text-center container">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="{#active#}" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://images.hugoboss.com/is/image/boss/181204_S19SR_HUGO_Sportswear_heaeder?$large$&align=0,-1&fit=crop,1&hei=720&op_brightness=-0&ts=1548771397726&wid=1920" alt="First slide">
+
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Example headline.</h1>
+              <p>Example Text</p>
+              <p><a class="btn btn-lg btn-secondary" href="{{ path('shirts') }}">Browse Now</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://www.unisys.com/siteassets/images/clients/masked-heroes/hero-clients-delivering-excellent-on-site-support-services.jpg" alt="Second slide">
+
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Some representative placeholder content for the second slide of the carousel.</p>
+              <p><a class="btn btn-lg btn-secondary" href="#">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="https://www.unisys.com/siteassets/images/clients/masked-heroes/hero-clients-enabling-government-agencies-to-digitally-engage-citizens.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>One more for good measure.</h1>
+              <p>Some representative placeholder content for the third slide of this carousel.</p>
+              <p><a class="btn btn-lg btn-secondary" href="#">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+{% endblock %}
+{% block body %}
+  <!-- CARDS -->
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        <!-- STARTS HERE -->
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="https://media.istockphoto.com/photos/hipster-wearing-white-blank-tshirt-with-space-for-your-logo-picture-id542577988?k=20&m=542577988&s=612x612&w=0&h=VKR458tQ14-JQmpg5mRC7PfUk6oxAUx1K4c2vGGzOM4=" alt="test">
+
+            <div class="card-body">
+              <p class="card-text">Example Text</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <p><a class="btn btn-sm btn-secondary" href="{{ path('shirts') }}">Browse Now</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+</main>
+  {% endblock %}
+
+  {% block footer %}
+  <!-- FOOTER -->
+<footer class="text-muted py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h1>Information</h1>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-black">About us</a></li>
+          <li><a href="#" class="text-black">Help</a></li>
+        </ul>
+      </div>
+      <div class="col-sm">
+        <ul class="list-unstyled">
+          <h1>Socials</h1>
+          <li><i class="fa-brands fa-facebook-square"></i><a href="#" class="text-black">Facebook</a></li>
+          <li><i class="fa-brands fa-instagram-square"></i><a href="#" class="text-black">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="col-sm">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
+{% endblock %}

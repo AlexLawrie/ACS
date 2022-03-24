@@ -1,0 +1,133 @@
+{% block title %}<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alex's Clothes Store">
+    <meta name="author" content="Alex Lawrie">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>ACS</title>
+    {% endblock %}
+    {% block stylesheets %}
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Carousel CSS file to improve the carousel.  It breaks the page though. -->
+    {#<link href="../carousel.css" rel="stylesheet">#}
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+</head>
+{% endblock %}
+{% block navbar %}
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">Alex's Clothes Store</h4>
+                    <a href="{{ path('shirts') }}"><p class="text-white">Shirts</p></a>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">Account</h4>
+                    <ul class="list-unstyled">
+                        {% if app.user %}
+                        <li><a href="{{ path('app_logout') }}" class="text-white">Logout</a>
+                        <li><a href="#" class="text-white">Cart</a></li>
+                        {% else %}
+                        <li><a href="{{ path('app_login') }}" class="text-white">Login</a></li>
+                        <li><a href="{{ path('app_register') }}" class="text-white">Register</a></li>
+{% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="{{ path('index') }}" class="navbar-brand d-flex align-items-center">
+                <img src="https://images.squarespace-cdn.com/content/v1/575a6067b654f9b902f452f4/1552683653140-0UUVQSSUEWVC73AWAEQG/300Logo.png?format=300w" width="10%" alt="ACS Logo">
+                <strong>ACS</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+{% block carousel %}
+<main>
+
+
+    {% endblock %}
+    {% block body %}
+
+
+
+
+
+
+
+</main>
+{% endblock %}
+
+{% block footer %}
+<!-- FOOTER -->
+<footer class="text-muted py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>Information</h1>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-black">About us</a></li>
+                    <li><a href="#" class="text-black">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-sm">
+                <ul class="list-unstyled">
+                    <h1>Socials</h1>
+                    <li><i class="fa-brands fa-facebook-square"></i><a href="#" class="text-black">Facebook</a></li>
+                    <li><i class="fa-brands fa-instagram-square"></i><a href="#" class="text-black">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-sm">
+                <p class="float-end mb-1">
+                    <a href="#">Back to top</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
+{% endblock %}
